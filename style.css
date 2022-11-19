@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+div.back {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./assets/Banner\ profilo.png);
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-size: 100% 100%;
+  opacity: 0.98;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/Banner\ profilo.png);
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider {
+  position: relative;
+  width: var(--custom-width);
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(255, 165, 0, 0.7);
+}
+.slider .slide-wrap {
+  position: relative;
+  left: 0;
+  height: 100%;
+  width: 1000%;
+  transition: left 0.6s ease-in-out;
+}
+.slider .slide-wrap li {
+  position: relative;
+  height: 100%;
+  float: left;
+}
+.slider .slide-wrap li img {
+  width: 1000px;
+  height: 600px;
+}
+.slider .bi {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 30px;
+  transition: background-color 0.2s ease;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+}
+.slider .bi:hover {
+  background-color: rgb(218, 100, 3);
+  text-shadow: 0;
+  cursor: pointer;
+}
+.slider .bi-chevron-left {
+  left: 10px;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+.slider .bi-chevron-right {
+  right: 10px;
+  padding-top: 4px;
+  padding-left: 5px;
+}
+.slider p {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgb(218, 100, 3);
+}
+
+.dot-wrap {
+  display: flex;
+  margin-top: 1rem;
+}
+.dot-wrap .dot {
+  border: 2px solid rgb(218, 100, 3);
+  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+.dot-wrap .dot:not(:last-child) {
+  margin-right: 15px;
+}
+
+.dot-active {
+  background-color: rgb(218, 100, 3);
+}
+
+@media only screen and (max-width: 768px) {
+  .slider,
+.slide-wrap img {
+    width: 750px;
+    height: 600px;
+  }
+}
